@@ -6,11 +6,11 @@ if (isset($_POST["spotify_url"]))
 {
     if (empty($_POST["spotify_url"]))
         {
-		echo "du måste skriva något...";
+		echo "you have to enter a spotify http link";
         }
     elseif (substr($_POST["spotify_url"],0,29)=="http://open.spotify.com/track/")
         {
-		echo "det måste vara en låt, inget annat";
+		echo "it has to be a song http link, nothing else";
         }        
 
     elseif (substr($_POST["spotify_url"],0,29)=="If you enable JavaScript in your browser,")
