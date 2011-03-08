@@ -8,13 +8,15 @@ if (isset($_POST["spotify_url"]))
         {
 		echo "you have to enter a spotify http link";
         }
-    elseif (substr($_POST["spotify_url"],0,29)=="http://open.spotify.com/track/")
+    elseif (substr($_POST["spotify_url"],0,29)!="http://open.spotify.com/track")
         {
 		echo "it has to be a song http link, nothing else";
         }        
 
-    elseif (substr($_POST["spotify_url"],0,29)=="If you enable JavaScript in your browser,")
+    elseif (substr($_POST["spotify_url"],0,29)=="If you enable JavaScript in your browser"); 
 	{
+		echo substr($_POST["spotify_url"],0,29);
+		echo "<br/>";
 		echo "something went wrong, you got the js error again";
 	}
     else
