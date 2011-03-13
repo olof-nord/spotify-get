@@ -21,32 +21,33 @@ if (isset($_POST["spotify_url"]))
 	}
     else
     	{
-    	//exempelurl: 'http://open.spotify.com/track/2lN6G35gsXkA3xzPYqmis5';
-    	$spotifyurl = file($_POST["spotify_url"]);
+    		//exempelurl: 'http://open.spotify.com/track/2lN6G35gsXkA3xzPYqmis5';
+    		$cleanspotifyurl = file($_POST["spotify_url"]);
 
-	$songtitle=$spotifyurl[56];
-        //First substr to remove last " and second substr to remove initial garbage
-        $artist= substr(substr($spotifyurl[63],31), 0,-2);
-
-
-    	echo "Title:<br/>";
-   	echo $songtitle;
-    	echo "<br/>";
-
-    	echo "Artist:<br/>";
-    	echo $artist;
-
-	echo "<br/>";
-        echo "http://www.youtube.com/results?search_query=".$artist.$songtitle;
-
-        echo "<p>Youtubepage hopefully containing somehting relevant to the link</p>";
-        //echo "<iframe src="http://www.youtube.com/results?search_query="$artist.$songtitle" width="150px" height="200px"></iframe>";
-        
-        echo "<br/>";
-        //echo "<a href="http://kg-tm04/olonor9215/PHP/spotify-get/">return @ school</a>";
-	//echo "<a href="http://localhost/spotify-get/index.htm">return @ home</a>;
+		$songtitle=$cleanspotifyurl[56];
+	        //First substr to remove last " and second substr to remove initial garbage
+	        $artist= substr(substr($cleanspotifyurl[63],31), 0,-2);
 
 
+    		echo "Title:<br/>";
+	   	echo $songtitle;
+    		echo "<br/>";
+
+	    	echo "Artist:<br/>";
+	    	echo $artist;
+		echo "<br/>";
+
+		echo "youtube search link:";
+		echo "<br/>";
+	        echo "http://www.youtube.com/results?search_query=".$artist.$songtitle;
+	
+		echo "<br/>";
+		echo "google im feeling lucky search with specified site:youtube.com parameter";
+		echo "<br/>";
+		echo "http://www.google.com/search?q=".$artist.$songtitle."+site:youtube.com&btnI";
+
+	        //echo "<a href="http://kg-tm04/olonor9215/PHP/spotify-get/">return @ school</a>";
+		//echo "<a href="http://localhost/spotify-get/index.htm">return @ home</a>";
    	}
 }
 ?>
